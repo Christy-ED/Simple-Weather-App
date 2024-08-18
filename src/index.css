@@ -1,5 +1,13 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;  
 }
+.app{
+
+  min-height: 100vh;
+  display: grid;  /* the weather app will go in center of the web page */
+  background: #266e84;
+
+}
+
