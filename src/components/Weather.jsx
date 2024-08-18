@@ -37,7 +37,7 @@ const Weather = () => {
     const search = async(city) =>{
       try{
         // create an URL to make the API call 
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_API_ID}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${import.meta.env.VITE_API_ID}`;
       
         //Fetch API to get the data from the URL
         const response = await fetch(url);
@@ -62,7 +62,7 @@ const Weather = () => {
   
     // use effect call the search function when the contain get loaded 
     useEffect(() =>{
-      search("Norristown");
+      search("Drexel Hill");
     },[]); 
 
 
@@ -74,13 +74,13 @@ const Weather = () => {
             <img src={search_icon} alt=""/>
         </div>
         <img src={clear_icon} alt="" className='weather-icon'/>
-        <p className='temperature'> {weatherData.temperature}</p>
+        <p className='temperature'> {weatherData.temperature}°F</p>
         <p className='location'>{weatherData.location}</p>
         <div className="weather-date"> 
           <div className="col">
             <img src={humidity_icon} alt=""/>
             <div>
-            <p>{weatherData.humidity}</p>
+            <p>{weatherData.humidity}%</p>
             <span>Humidity</span>
             </div>
           </div>
@@ -88,7 +88,7 @@ const Weather = () => {
           <div className="col">
             <img src={wind_icon} alt=""/>
             <div>
-            <p>{weatherData.windSpeed}</p>
+            <p>{weatherData.windSpeed}mph</p>
             <span>Wind Speed</span>
             </div>
           </div>
