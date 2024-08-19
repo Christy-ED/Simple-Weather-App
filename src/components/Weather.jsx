@@ -43,7 +43,7 @@ const Weather = () => {
       }
       try{
         // create an URL to make the API call 
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${import.meta.env.VITE_API_ID}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=3f6777ae391e04939890c1fb0ef0f8a7`;
       
         //Fetch API to get the data from the URL
         const response = await fetch(url);
